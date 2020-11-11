@@ -72,12 +72,12 @@ Parameters:
  * callback function getYears
  */
 
-function getWinnersByYear(data, getYearsCB, getWinnersCB) {
-    let winner = getWinnersCB(data);
-    let years = getYearsCB(data);
+function getWinnersByYear(fifaData, getYearsCB, getWinnersCB) {
+    let winner = getWinnersCB(fifaData);
+    let years = getYearsCB(fifaData);
 
     const announce = winner.map(function(item, index){
-        return `In ${years[index]}, ${item} won the World Cup!`
+        return `In ${years[index]}, ${item} won the world cup!`
     }) 
     console.log(announce);
     return announce;
