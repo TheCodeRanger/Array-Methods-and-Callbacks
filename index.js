@@ -95,7 +95,9 @@ function getAverageGoals(data) {
         return accumulator + item['Away Team Goals'];
     },0);
     console.log(`${aveHomeGoals/data.length + aveAwayGoals/data.length}`);
-    return `${aveHomeGoals/data.length + aveAwayGoals/data.length}`
+    // return `${aveHomeGoals/data.length + aveAwayGoals/data.length}`
+    const avgGoals = aveHomeGoals/data.length + aveAwayGoals/data.length
+    return avgGoals.toFixed(2);
 }
 
 getAverageGoals(fifaData);
