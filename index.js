@@ -25,7 +25,8 @@ function getFinals(data) {
    const finalsData = data.filter(function(item){
     return item.Stage === 'Final';
    });
-   console.log('Task 2', finalsData);
+   console.log('Task 2', finalsData); 
+   return finalsData;
 }
 
 
@@ -33,12 +34,14 @@ function getFinals(data) {
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
-function getYears(getFinalsCB, data) {
-    const years = [];
-    
-
+function getYears(data, getFinalsCB) {
+    const years = getFinalsCB(data).map(function(item){
+        return item['Year']; 
+    });
+    console.log(years);
+    return years;
 }
-
+getYears(fifaData, getFinals);
 
 
 
